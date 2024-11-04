@@ -83,3 +83,46 @@ const input = document.querySelector('body>input')
 
 // повертає масив елементів на сторінці з вказаним css селектором
 const btns = document.querySelectorAll('button')
+
+/*
+  на кнопку ресет повісити функцію-слухач, яка має виводити повідомлення
+    повідомлення має показатися тільки при першому натисканні
+*/
+
+const resetBtn = document.getElementById('reset-btn')
+
+// рішення 1 - через зовнішню змінну
+// let isMessageShown = false
+
+// function handleResetClick() {
+//   // console.log('click')
+//   if(!isMessageShown) {
+//     alert('You clicked on button "reset"')
+//     isMessageShown = true
+//   }
+// }
+
+// resetBtn.addEventListener('click', handleResetClick)
+
+// рішення 2 - зробити одноразовим через обʼєкт налаштувань addEventListener
+// function handleResetClick() {
+//   console.log('click')
+//   alert('You clicked on button "reset"')
+// }
+
+// resetBtn.addEventListener('click', handleResetClick, {once: true})
+
+// рішення 3 - removeEventListener
+function handleResetClick() {
+    console.log('click')
+    alert('You clicked on button "reset"')
+
+    // прибираємо слухач після того як він відпрацював
+    // передаємо тип події та посилання на ту саму функцію
+    // resetBtn.removeEventListener('click', handleResetClick)
+}
+
+resetBtn.addEventListener('click', handleResetClick)
+resetBtn.addEventListener('click', function testFunc() {
+  console.log('testing')
+})
