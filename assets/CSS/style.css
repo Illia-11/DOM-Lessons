@@ -7,3 +7,8 @@
 .error {
   color: green;
 }
+
+.container {
+  padding: 20px;
+  border: solid 5px black;
+}
