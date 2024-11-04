@@ -45,3 +45,41 @@ function showMessage () {
   listener - функція, яка запуститься браузером коли подія відбудеться з target
 */
 clickMeBtn.addEventListener('click', showMessage);
+
+/*
+  методи пошуку елементів у ДОМ-дереві:
+
+  document.getElemntsByTagName('button')
+    повертає масивоподібну колекцію всіх елементів на сторінці з вказаним тегом
+  
+  document.getElemntsByClassName('class)
+    повертає масивоподібну колекцію всіх елементів на сторінці з вказаним класом
+  
+  document.getElemntsByName('someName)
+    повертає масивоподібну колекцію всіх елементів на сторінці з вказаним
+  
+  * document.getElemntById('someId')
+    повертає перший елемент на сторінці з вказаним айдішніком
+
+
+  * document.querySelector()
+    повертає перший елемент на сторінці з вказаним css селектором
+  
+  * document.querySelectorAll()
+    повертає масив елементів на сторінці з вказаним css селектором
+*/
+
+// овертає масивоподібну колекцію всіх елементів на сторінці з вказаним класом
+const [firstErrorBtn] = document.getElementsByClassName('error')
+
+// повертає масивоподібну колекцію всіх елементів на сторінці з вказаним
+const inputs = document.getElementsByName('someInputName')
+
+// повертає перший елемент на сторінці з вказаним айдішніком
+const select1 = document.getElementById('select-1')
+
+// повертає перший елемент на сторінці з вказаним css селектором
+const input = document.querySelector('body>input')
+
+// повертає масив елементів на сторінці з вказаним css селектором
+const btns = document.querySelectorAll('button')
