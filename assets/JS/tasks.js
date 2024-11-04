@@ -23,4 +23,47 @@ function createAlertClickCounter() {
 
 clickMeBtn.addEventListener('click', createAlertClickCounter())
 
+
+console.log('===============')
+
+
+// class task 04.11.2024
+
+/*
+HTML structure:
+
+  <h1>H1 1</h1>
+  <div>
+    <h1>H1 2</h1>
+    <section>
+// <!-- знайти цей h1 -->
+// <h1>Find ME</h1> 
+      <img src="" alt="img 1">
+      <p>
+        par1
+        <span>asdsad</span>
+      </p>
+    </section>
+// <!-- знайти цей img -->
+// <img src="" alt="Find ME">
+  </div>
+  <section class="section">
+    <h2>asdsad</h2>
+// <!-- знайти цей p -->
+// <p>Find ME</p>
+  </section>
+*/
+
+// solution:
+
+const getH1Element = document.querySelector('body>div>section>h1')
+console.log(getH1Element)
+
+const getImgElement = document.querySelector('img[alt="Find ME"]')
+console.log(getImgElement)
+
+const getPElement = document.querySelector('.section>p')
+console.log(getPElement)
+
+
 console.log('===============')
