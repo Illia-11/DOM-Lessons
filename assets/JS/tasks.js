@@ -9,7 +9,7 @@ bonus level:
 */
 
 // basic && bonus level:
-const [clickMeBtn] = document.getElementsByTagName('button')
+// const [clickMeBtn] = document.getElementsByTagName('button')
 
 function createAlertClickCounter() {
   let counter = 0
@@ -21,14 +21,13 @@ function createAlertClickCounter() {
   return alertClicksCounter
 }
 
-clickMeBtn.addEventListener('click', createAlertClickCounter())
+// clickMeBtn.addEventListener('click', createAlertClickCounter())
 
 
 console.log('===============')
 
 
 // class task 04.11.2024
-
 /*
 HTML structure:
 
@@ -67,3 +66,27 @@ console.log(getPElement)
 
 
 console.log('===============')
+
+
+// class task 05.11.2024
+/*
+  в HTML зробити кнопку та параграф з текстом
+
+  При натисканні на кнопку промптом спитати у користувача число
+  після цього відобразити у параграфі квадрат цього числа
+*/
+
+const [justbtn] = document.getElementsByTagName('button')
+const par = document.getElementById('param')
+
+function squareNumber() {
+  const num = +prompt('Enter number: ')
+
+  if(!isNaN(num)) {
+    par.textContent = `Result: ${Math.pow(num, 2)}`
+  } else {
+    throw new TypeError('Not right type!')
+  }
+}
+
+justbtn.addEventListener('click', squareNumber)
