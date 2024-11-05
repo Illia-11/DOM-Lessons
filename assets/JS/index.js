@@ -135,11 +135,11 @@ function stopEvent(event) {
   event.stopPropagation()
 }
 
-resetBtn.addEventListener('click', handleResetClick)
-container.addEventListener('click', handleResetClick)
-container.addEventListener('click', stopEvent, true)
-document.body.addEventListener('click', handleResetClick)
-document.addEventListener('click', handleResetClick)
+// resetBtn.addEventListener('click', handleResetClick)
+// container.addEventListener('click', handleResetClick)
+// container.addEventListener('click', stopEvent, true)
+// document.body.addEventListener('click', handleResetClick)
+// document.addEventListener('click', handleResetClick)
 
 /*
   true - запуск на етапі занурення
@@ -185,3 +185,13 @@ document.addEventListener('click', handleResetClick)
 
   node.textContent - містить текстовий вміст цього вузла. Дозволяє міняти текст вузла / елемента
 */
+
+const btnContainer = document.getElementById('btnContainer')
+
+function logText(e) {
+  if(e.target.tagName === 'BUTTON') {
+  console.log(e.target.textContent)
+  }
+}
+
+btnContainer.addEventListener('click', logText)
