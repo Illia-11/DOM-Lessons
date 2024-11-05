@@ -115,10 +115,10 @@ const resetBtn = document.getElementById('reset-btn')
 // рішення 3 - removeEventListener
 function handleResetClick(event) {
   // обʼєкт події, що трапилася
-  console.log(event)
+  // console.log(event)
 
   // посилання на обʼєкт з яким сталася подія
-  console.log(event.target)
+  // console.log(event.target)
 
   // посилання на обʼєкт, чий обробник було запущено
   console.log(event.currentTarget)
@@ -129,10 +129,33 @@ function handleResetClick(event) {
 }
 const container = document.querySelector('.container')
 
+function stopEvent(event) {
+  console.log(event)
+  // припиняється подальший запуск обробників подій
+  event.stopPropagation()
+}
+
 resetBtn.addEventListener('click', handleResetClick)
 container.addEventListener('click', handleResetClick)
+container.addEventListener('click', stopEvent, true)
 document.body.addEventListener('click', handleResetClick)
 document.addEventListener('click', handleResetClick)
+
+/*
+  true - запуск на етапі занурення
+  false - на етапі всплиття
+*/
+// resetBtn.addEventListener('click', handleResetClick, false)
+// container.addEventListener('click', handleResetClick, true)
+// document.body.addEventListener('click', handleResetClick, {capture: true})
+// document.addEventListener('click', handleResetClick, false)
+
+/*
+  Фази обробки подій:
+    1. дивиться з ким сталася наша подія (занурення)
+    2. найглибший елемент у дереві з яким подія трапилась (target)
+    3. браузер запускає обробники подій починаючи з найглибшого до найпершого (всплиття)
+*/
 
 // resetBtn.addEventListener('click', function testFunc() {
 //   console.log('testing')
