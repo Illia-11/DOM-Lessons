@@ -142,3 +142,23 @@ document.addEventListener('click', handleResetClick)
 
 // const fakeClick = new MouseEvent('click')
 // resetBtn.dispatchEvent(new MouseEvent('click'))
+
+/*
+  Node (вузол) - основний будівельний блок ДОМу
+  Всі елементи, атрибути та текст у ДОМі робляться через вузли
+
+  Основні властивості вузлів:
+
+  node.baseURI - URL адреса сайту
+
+  node.childNodes - список всіх дитячих вузлів поточного вузла
+  node.firstChild - перший дитячий вузол
+  node.lastChild - останній дитячий вузол
+  node.nextSibling - посилання на настпуний вузол після цього
+  node.previousSibling - посилання на попередній вузол
+
+  node.parentNode - повертає батьківський вузол
+  node.parentElement - повертає батьківський елемент
+
+  node.textContent - містить текстовий вміст цього вузла. Дозволяє міняти текст вузла / елемента
+*/
