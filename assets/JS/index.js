@@ -233,3 +233,50 @@ form.addEventListener('submit', (e) => {
   // formInput.value = ''
   formElement.reset()
 })
+
+const imgSwitchBtn = document.getElementById('imgSwitchBtn')
+const picture = document.getElementById('picture')
+
+imgSwitchBtn.addEventListener('click', (e) => {
+
+  // зміна атрибутів
+
+  // 1. сеттери для унікальних атрибутів елемента / деяких глобальних атрибутів
+  // picture.src = 'https://gardenclub.ua/wp-content/uploads/2023/01/2b852b1737725d4e8b4b80910839e781a74dba97-1.jpeg'
+  // picture.alt = 'british shynshyla'
+
+  // picture.id = 'newId'
+
+  // picture.className = 'newClass1 newClass2'
+
+  // picture.style = 'border: 5px solid black; width: 300px; height: 300px'
+
+  // 2. через setAttribute
+  // picture.setAttribute('src', 'https://gardenclub.ua/wp-content/uploads/2023/01/2b852b1737725d4e8b4b80910839e781a74dba97-1.jpeg')
+
+  picture.setAttribute('alt', 'flower')
+
+  picture.setAttribute('id', 'flw')
+
+  picture.setAttribute('style', 'border: 5px solid black; width: 300px; height: 300px')
+
+  picture.setAttribute('my-attribute', 'test')
+
+  // 3. через вузол-аттрибут
+  const srcNode = document.createAttribute('src')
+  console.dir(srcNode)
+
+  srcNode.value = 'https://gardenclub.ua/wp-content/uploads/2023/01/2b852b1737725d4e8b4b80910839e781a74dba97-1.jpeg'
+
+  picture.setAttributeNode(srcNode)
+})
+
+/*
+  ще деякі цікаві методи роботи з атрибутами:
+
+    picture.hasAttribute('src') - перевірка наявності атрибута
+    picture.getAttribute('src') - отримання значення атрибута
+    picture.hasAttributeNode('src') - отримати обʼєкт вузла атрибута
+    
+    picture.removeAttribute('src') - видалення атрибута з елемента
+*/
