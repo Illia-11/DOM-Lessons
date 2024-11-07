@@ -76,8 +76,8 @@ console.log('===============')
   після цього відобразити у параграфі квадрат цього числа
 */
 
-const [justbtn] = document.getElementsByTagName('button')
-const par = document.getElementById('param')
+// const [justbtn] = document.getElementsByTagName('button')
+// const par = document.getElementById('param')
 
 function squareNumber() {
   const num = +prompt('Enter number: ')
@@ -89,4 +89,35 @@ function squareNumber() {
   }
 }
 
-justbtn.addEventListener('click', squareNumber)
+// justbtn.addEventListener('click', squareNumber)
+
+
+console.log('===============')
+
+
+// class task 05.11.2024
+/*
+  Створити дів, всередині якого будуть знаходитися кнопки
+  текстом яких будуть назви тем
+  ('світла', 'темна', ...)
+  також зробити параграф в якому буде написано назву поточної теми
+
+  написати функцію-слухач яка буде міняти текст параграфа в залежності від
+  того, на яку кнопку перемикання теми ви натиснули
+  обробник має висіти тільки на одному елементі
+*/
+
+const containerOfTheme = document.getElementById('containerOfTheme')
+const themPar = document.getElementById('themPar')
+
+function logTheme(e) {
+  if(e.target.tagName === 'BUTTON') {
+    themPar.textContent = e.target.textContent
+  }
+}
+
+containerOfTheme.addEventListener('click', logTheme)
+
+console.log('===============')
+
+
