@@ -107,8 +107,8 @@ console.log('===============')
   обробник має висіти тільки на одному елементі
 */
 
-const containerOfTheme = document.getElementById('containerOfTheme')
-const themPar = document.getElementById('themPar')
+// const containerOfTheme = document.getElementById('containerOfTheme')
+// const themPar = document.getElementById('themPar')
 
 function logTheme(e) {
   if(e.target.tagName === 'BUTTON') {
@@ -116,8 +116,42 @@ function logTheme(e) {
   }
 }
 
-containerOfTheme.addEventListener('click', logTheme)
+// containerOfTheme.addEventListener('click', logTheme)
 
 console.log('===============')
 
 
+// class task 07.11.2024
+/*
+  створити формочку з інпутом та кнопкою відправки
+  також поруч із формою має бути параграф з текстом
+
+  користувач буде ввдоити в інпут числа
+
+  при відправці форми у параграфі має відобразитися число у квадраті
+
+  після відправки форми підчистити її
+
+  * якщо користувач вводить некорректне число то у парагрфі написати що він
+    має ввести нормане число
+*/
+
+//  basic level:
+const form = document.getElementById('form')
+const par = document.getElementById('par')
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault()
+  const formInput = e.target.elements.input1
+
+  console.log(typeof formInput.value) // string (завжди)
+
+  const number = +formInput.value
+
+  if(isNaN(number)) {
+    par.textContent = `Put right number`
+  } else {
+    par.textContent = `Squared value: ${formInput.value * formInput.value}`
+  }
+  e.target.reset()
+})
