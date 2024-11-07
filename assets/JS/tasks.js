@@ -118,6 +118,7 @@ function logTheme(e) {
 
 // containerOfTheme.addEventListener('click', logTheme)
 
+
 console.log('===============')
 
 
@@ -137,21 +138,49 @@ console.log('===============')
 */
 
 //  basic level:
-const form = document.getElementById('form')
-const par = document.getElementById('par')
+// const form = document.getElementById('form')
+// const par = document.getElementById('par')
 
-form.addEventListener('submit', (e) => {
-  e.preventDefault()
-  const formInput = e.target.elements.input1
+// form.addEventListener('submit', (e) => {
+//   e.preventDefault()
+//   const formInput = e.target.elements.input1
 
-  console.log(typeof formInput.value) // string (завжди)
+//   console.log(typeof formInput.value) // string (завжди)
 
-  const number = +formInput.value
+//   const number = +formInput.value
 
-  if(isNaN(number)) {
-    par.textContent = `Put right number`
+//   if(isNaN(number)) {
+//     par.textContent = `Put right number`
+//   } else {
+//     par.textContent = `Squared value: ${formInput.value * formInput.value}`
+//   }
+//   e.target.reset()
+// })
+
+
+console.log('===============')
+
+
+// class task 07.11.2024
+/*
+  створити картинку та кнопку
+  також зробити масив в якому розмістити 2 посилання на якісь картинки (значення src)
+
+  по натисканню на кнопку ваша картинка має перемикатися між цими двома src
+
+  * переробити структури масиву так, щоб в ньому одночасно можна було зберігати і значення src і значення alt. При натисканні на кнопку треба змінювати не тільки src але і alt
+*/
+
+const picturesArr = ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa2i2uZJdS3sBLD0lr_dEppnvTRyjqo4NE4w&s', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYS4VmQw6QXqypALWf07U1JRA8Ra7L6ddsqA&s']
+
+const btnForSwitchingImg = document.getElementById('btnForSwitchingImg')
+const picture = document.getElementById('picture')
+
+btnForSwitchingImg.addEventListener('click', (e) => {
+  const pictureValue = picture.getAttribute('src')
+  if(pictureValue === picturesArr[0]) {
+    picture.setAttribute('src', picturesArr[1])
   } else {
-    par.textContent = `Squared value: ${formInput.value * formInput.value}`
+    picture.setAttribute('src', picturesArr[0])
   }
-  e.target.reset()
 })
