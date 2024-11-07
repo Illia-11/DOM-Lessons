@@ -195,3 +195,41 @@ function logText(e) {
 }
 
 btnContainer.addEventListener('click', logText)
+
+/*
+  Форми
+*/
+
+const formatsubmitBtn = document.getElementById('formatsubmitBtn')
+const form = document.getElementById('form')
+
+// formatsubmitBtn.addEventListener('click', (e) => {
+//   console.log('test')
+//   e.preventDefault()
+// })
+
+// submit - подія відправки форми
+form.addEventListener('submit', (e) => {
+  // зупинка станудартної поведінки браузера при виконанні події
+  e.preventDefault()
+  console.log('form submit event')
+  console.log(e)
+
+  const {target: formElement} = e
+  
+  // всі інтерактивні елементи форми
+  console.log(formElement.elements)
+
+  // console.log(formElement.elements.inputName)
+  const formInput = formElement.elements.inputName
+  console.log(formInput)
+
+  /*
+    Отримати значення, яке було введено в інпут
+  */
+  console.log(formInput.value)
+
+  // очстка даних у формі
+  // formInput.value = ''
+  formElement.reset()
+})
