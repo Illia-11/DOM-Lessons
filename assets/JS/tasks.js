@@ -171,24 +171,57 @@ console.log('===============')
   * переробити структури масиву так, щоб в ньому одночасно можна було зберігати і значення src і значення alt. При натисканні на кнопку треба змінювати не тільки src але і alt
 */
 
-const picturesArr = [
-  {
-    src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeQ2IQ-ZJAz7JjtE6yAMbzfEkvBgG6ZMR_lA&s',
-    alt: 'cat'},
-  {
-    src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIs55YYqbZw5eV_7sCXa_OCmb-raPssT_olw&s',
-    alt: 'dog'}]
+// const picturesArr = [
+//   {
+//     src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeQ2IQ-ZJAz7JjtE6yAMbzfEkvBgG6ZMR_lA&s',
+//     alt: 'cat'},
+//   {
+//     src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIs55YYqbZw5eV_7sCXa_OCmb-raPssT_olw&s',
+//     alt: 'dog'}]
 
-const btnForSwitchingImg = document.getElementById('btnForSwitchingImg')
-const picture = document.getElementById('picture')
+// const btnForSwitchingImg = document.getElementById('btnForSwitchingImg')
+// const picture = document.getElementById('picture')
 
-btnForSwitchingImg.addEventListener('click', (e) => {
-  const pictureValue = picture.getAttribute('src')
-  if(pictureValue === picturesArr[0].src) {
-    picture.setAttribute('src', picturesArr[1].src)
-    picture.setAttribute('alt', picturesArr[1].alt)
-  } else {
-    picture.setAttribute('src', picturesArr[0].src)
-    picture.setAttribute('alt', picturesArr[0].alt)
+// btnForSwitchingImg.addEventListener('click', (e) => {
+//   const pictureValue = picture.getAttribute('src')
+//   if(pictureValue === picturesArr[0].src) {
+//     picture.setAttribute('src', picturesArr[1].src)
+//     picture.setAttribute('alt', picturesArr[1].alt)
+//   } else {
+//     picture.setAttribute('src', picturesArr[0].src)
+//     picture.setAttribute('alt', picturesArr[0].alt)
+//   }
+// })
+
+
+console.log('===============')
+
+
+// class task 08.11.2024
+/*
+  створити дів всередині якого будуть кнопки
+  текст кнопок буде різними кольорами українською мавою
+
+  при натисканні на кнопку колір фону діва має змінитися на колір з кнопки
+  для передачі значення кольорів використовувати користувацькі атрибути
+
+  колір фону можна міняти наступним чином:
+  element.style = ''
+  element.style.backgroundColor = ''
+*/
+
+const changedColorDiv = document.getElementById('changedColorDiv')
+
+changedColorDiv.addEventListener('click', (e) => {
+  const {target} = e
+
+  if(target.tagName === 'BUTTON') {
+    const color = target.dataset.bgColor
+    changedColorDiv.style.backgroundColor = color
   }
 })
+
+
+console.log('===============')
+
+
