@@ -171,16 +171,24 @@ console.log('===============')
   * переробити структури масиву так, щоб в ньому одночасно можна було зберігати і значення src і значення alt. При натисканні на кнопку треба змінювати не тільки src але і alt
 */
 
-const picturesArr = ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa2i2uZJdS3sBLD0lr_dEppnvTRyjqo4NE4w&s', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYS4VmQw6QXqypALWf07U1JRA8Ra7L6ddsqA&s']
+const picturesArr = [
+  {
+    src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeQ2IQ-ZJAz7JjtE6yAMbzfEkvBgG6ZMR_lA&s',
+    alt: 'cat'},
+  {
+    src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIs55YYqbZw5eV_7sCXa_OCmb-raPssT_olw&s',
+    alt: 'dog'}]
 
 const btnForSwitchingImg = document.getElementById('btnForSwitchingImg')
 const picture = document.getElementById('picture')
 
 btnForSwitchingImg.addEventListener('click', (e) => {
   const pictureValue = picture.getAttribute('src')
-  if(pictureValue === picturesArr[0]) {
-    picture.setAttribute('src', picturesArr[1])
+  if(pictureValue === picturesArr[0].src) {
+    picture.setAttribute('src', picturesArr[1].src)
+    picture.setAttribute('alt', picturesArr[1].alt)
   } else {
-    picture.setAttribute('src', picturesArr[0])
+    picture.setAttribute('src', picturesArr[0].src)
+    picture.setAttribute('alt', picturesArr[0].alt)
   }
 })
