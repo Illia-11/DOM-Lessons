@@ -300,3 +300,22 @@ console.log(div.dataset.theme)
 console.log(div.dataset.longAttributeName)
 
 div.setAttribute('data-theme', 'dark')
+
+
+// створення елементів
+const elem = document.createElement('h1')
+
+elem.textContent = 'Hello from DOM'
+
+elem.id = 'dom-h1'
+
+const rootDiv = document.getElementById('root')
+
+// вставка elem останньою дитиною rootDiv
+rootDiv.appendChild(elem)
+
+const p1 = document.createElement('p')
+
+p1.textContent = 'test'
+
+rootDiv.append(p1, 'some Text')
