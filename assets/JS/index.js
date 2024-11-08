@@ -280,3 +280,23 @@ imgSwitchBtn.addEventListener('click', (e) => {
     
     picture.removeAttribute('src') - видалення атрибута з елемента
 */
+
+
+/*
+  Користувацькі атрибути (data-*)
+  атрибути, які розпочинаються з data-
+*/
+
+const div = document.getElementById('div')
+
+// отримання значення користуваського атрибуту
+const currentTheme = div.getAttribute('data-theme')
+
+// dataset - властивість куди скидають значення всіх користуваських атрибутів
+console.log(div.dataset)
+
+console.log(div.dataset.theme)
+// кебаб кейс в html автоматично перетворюється в кемел кейс у JS
+console.log(div.dataset.longAttributeName)
+
+div.setAttribute('data-theme', 'dark')

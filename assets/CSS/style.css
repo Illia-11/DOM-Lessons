@@ -12,3 +12,13 @@
   padding: 20px;
   border: solid 5px black;
 }
+
+[data-theme="light"] {
+  background-color: white;
+  color: black;
+}
+
+[data-theme="dark"] {
+  background-color: darkgrey;
+  color: white;
+}
