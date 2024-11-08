@@ -210,18 +210,32 @@ console.log('===============')
   element.style.backgroundColor = ''
 */
 
-const changedColorDiv = document.getElementById('changedColorDiv')
+// const changedColorDiv = document.getElementById('changedColorDiv')
 
-changedColorDiv.addEventListener('click', (e) => {
-  const {target} = e
+// changedColorDiv.addEventListener('click', (e) => {
+//   const {target} = e
 
-  if(target.tagName === 'BUTTON') {
-    const color = target.dataset.bgColor
-    changedColorDiv.style.backgroundColor = color
-  }
-})
+//   if(target.tagName === 'BUTTON') {
+//     const color = target.dataset.bgColor
+//     changedColorDiv.style.backgroundColor = color
+//   }
+// })
 
 
 console.log('===============')
 
 
+// class task 08.11.2024
+/*
+  створити функцію, яка приймає рядок з текстом
+  функція має створити параграф, покласти в нього текст з параметра функції
+  і прикріпити параграф до кінця елементу body
+*/
+
+const creationParagraph = function (str) {
+  const par = document.createElement('p')
+  par.textContent = str
+  document.body.appendChild(par)
+}
+
+creationParagraph('text')
