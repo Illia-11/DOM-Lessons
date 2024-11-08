@@ -319,3 +319,11 @@ const p1 = document.createElement('p')
 p1.textContent = 'test'
 
 rootDiv.append(p1, 'some Text')
+
+// видалення елементів
+
+// 1. removeChild - видаляє у елемента дитину
+rootDiv.removeChild(elem)
+
+// 2. remove - видаляє сам елемент
+p1.remove()
