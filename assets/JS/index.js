@@ -344,3 +344,38 @@ p1.remove()
 
   elem.innerHTML - дає доступ до повної внутрішньої HTML розмітки елемента
 */
+
+const post = {
+  user: 'Leanne Graham',
+  id: 1,
+  title:
+    'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed, ad aut. Iste?',
+  body: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse minus atque iste exercitationem ex quae enim unde accusamus laudantium nisi.'
+}
+
+const renderRoot = document.getElementById('render-root')
+
+function createPost(postObject) {
+  const postArticle = document.createElement('article')
+  postArticle.classList.add('post')
+
+  const postTitle = document.createElement('h2')
+  postTitle.classList.add('post-title')
+  postTitle.textContent = postObject.title
+
+  const postSubTitle = document.createElement('h3')
+  postSubTitle.classList.add('post-subtitle')
+  postSubTitle.textContent = `by ${postObject.user}`
+
+  const postText = document.createElement('p')
+  postText.classList.add('post-text')
+  postText.textContent = postObject.body
+
+  postArticle.append(postTitle, postSubTitle, postText)
+
+  return postArticle
+}
+
+const post1Elem = createPost(post)
+
+renderRoot.append(post1Elem)
