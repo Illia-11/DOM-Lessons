@@ -78,3 +78,35 @@ const jsonString = JSON.stringify(userData)
 
 // Десереалізація - процес відновлення даних аз зручного для передачі формату
 const userData2 = JSON.parse(jsonString)
+
+console.log(userData)
+console.log(userData2)
+
+console.log(userData === userData2) // false
+
+// Види копій обʼєктів у JS:
+
+const posts = [
+  {id: 1, title: 'bla', likes: 50},
+  {id: 2, title: 'bla bla', likes: 5},
+  {id: 3, title: 'bla bla bla', likes: 150},
+]
+
+// поверхнева копія обʼєкта - копія робиться тільки для самої змінної обʼєкта
+// властивості переносяться без змін
+const postsCopy1 = posts.slice()
+const postsCopy2 = [...posts]
+
+posts === postsCopy1 // false
+console.log(posts[1] === postsCopy1[1]) // true
+
+// глибока копія - копія робиться для всіх речей в обʼєкті
+const temp = JSON.stringify(posts)
+const postsCopy3 = JSON.parse(temp)
+
+postsCopy3[2] === posts[2] // false
+
+const postsCopy4 = JSON.parse(JSON.stringify(posts))
+
+const postsCopy5 = structuredClone(posts)
+postsCopy5[0] === posts[0] // false
