@@ -232,10 +232,62 @@ console.log('===============')
   і прикріпити параграф до кінця елементу body
 */
 
-const creationParagraph = function (str) {
-  const par = document.createElement('p')
-  par.textContent = str
-  document.body.appendChild(par)
+// const creationParagraph = function (str) {
+//   const par = document.createElement('p')
+//   par.textContent = str
+//   document.body.appendChild(par)
+// }
+
+// creationParagraph('text')
+
+
+console.log('===============')
+
+
+// hometask 12.11.2024
+/*
+  Створити функцію, яка буде послідовно відображати числа у консолі від 1 до 10
+  Числа мають показуватися з інтервалом 100мс
+
+  1 ...
+  2 ...
+  3 ...
+  4
+
+  можна виршіти двома шляхами:
+    setInterval - треба якось вчасно зупинити інтервал по якійсь умові
+    setTimeout - рішення буде засновано на рекурсії яка буде запускати таймаути поки певна умова істинна
+*/
+
+// function countInterval() {
+//   let i = 0
+
+//   const intervalId = setInterval(() => {
+//     console.log(++i)
+//     if(i >= 10) {
+//       // console.timeEnd('Interval')
+//       clearInterval(intervalId)
+//     }
+//   }, 100)
+// }
+
+// перевірка швидкості (час)
+// console.time('Interval')
+// countInterval()
+
+// or
+
+function countTimeout(i = 0) {
+
+  if(i < 10) {
+    setTimeout(() => {
+      console.log(++i)
+      countTimeout(i)
+    }, 100)
+  } else {
+    console.timeEnd('Timeout')
+  }
 }
 
-creationParagraph('text')
+console.time('Timeout')
+countTimeout()
