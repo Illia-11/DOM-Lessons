@@ -48,3 +48,33 @@ const intervalId = setInterval(() => {
 
 // зупинка інтервалу
 clearInterval(intervalId)
+
+const userData = {
+  email:'test@test.test',
+  password: '12345admin',
+  id: 5,
+  address: {
+    city: 'Kyiv',
+    country: 'Ukraine'
+  },
+  friends: [],
+  isMale: true,
+  someImportantData: null,
+  someSymbol: Symbol('test'),
+  isAdult: function () {
+    return this.age >= 18
+  }
+}
+
+
+// Серіалізація - процес перетворення даних у вигляд зручний для передачі
+const jsonString = JSON.stringify(userData)
+/*
+  Відімнності JSON та JS:
+    1. рядки в JSON можуть бути тільки подвійними лапками
+    2. ключі в обʼєктах мають бути рядками
+    3. відсутність висячих ком у кінці обʼєктів та масивів
+*/
+
+// Десереалізація - процес відновлення даних аз зручного для передачі формату
+const userData2 = JSON.parse(jsonString)
