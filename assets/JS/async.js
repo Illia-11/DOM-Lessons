@@ -219,3 +219,63 @@ promise.catch(function rejectedCallBack(error) {
   console.error('promise rejected and catched')
   console.error(error) // error - це дані про помилку
 })
+// const fetchResult = fetch('../../test.json');
+
+// const promise1 = fetchResult.then((response) => {
+//   // console.log(response);
+
+//   // асинхроний метод десереалізації даних
+//   const resJsonResult = response.json();
+
+//   // resJsonResult.then((data) => {
+//   //   console.log(data);
+//   // });
+
+//   // це опиниться у виконаному promise1
+//   // return 42;
+//   return resJsonResult;
+// });
+
+// const promise2 = promise1.then((data) => {
+//   console.log(data); // user object
+
+//   return {
+//     ...data,
+//     isOnline: true
+//   }
+// });
+const loader = document.getElementById('loader');
+
+fetch('../../test.json')
+  .then(
+    (response) => {
+      const resJsonResult = response.json();
+      return resJsonResult;
+    }
+  )
+  .then(
+    (data) => {
+      console.log(data); // user object
+
+      return {
+        ...data,
+        isOnline: true,
+      };
+    },
+    // (error) => {
+    //   // console.log(error);
+
+    //   return { id: -1 };
+    // }
+  )
+  .then((user) => {
+    console.log(`user id: ${user.id}`);
+    // loader.remove();
+  })
+  .catch((error) => {
+    console.log(error);
+    document.body.append('No user detected')
+    // loader.remove();
+  }).finally(() => {
+    loader.remove();
+  });
