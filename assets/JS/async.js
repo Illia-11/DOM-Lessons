@@ -168,11 +168,11 @@ readFile('../test.json', function callback (err, fileData) {
 
   У обʼєкта проміса є 3 можливих стани:
     - pending (очікується) - очікуємо виконання асинхроної операції
-    - fullfiled (виконаний) - асинхрона операція була успішно завершена
+    - fullfilled (виконаний) - асинхрона операція була успішно завершена
     - rejected (відхилений) - у промісі сталася помилка
 
   Проміс може знаходитися у 2 з цих трьох станів:
-    pending -> fullfiled
+    pending -> fullfilled
     pending -> rejected
 */
 
@@ -199,3 +199,17 @@ function executor(resolve, reject) {
 }
 
 console.log('after executor')
+
+// then - метод, який дозволить зреагувати на завершення асинхронної операції
+promise.then(
+  // fullfilledCallback запускається при успішному виконанні проміса
+  function fullfilledCallback(promiseResult) {
+    console.log('promise fullfilled')
+    console.log(promiseResult) // promiseResult - це результат роботи проміса
+  },
+  function rejectedCallBack(error) {
+    // rejectedCallBack запускається при успішному виконанні проміса
+    console.error('promise rejected')
+    console.error(error) // error - це дані про помилку
+  }
+)
