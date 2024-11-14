@@ -177,14 +177,25 @@ readFile('../test.json', function callback (err, fileData) {
 */
 
 // Створення проміса
+console.log('before executor')
 const promise = new Promise(executor)
 
 function executor(resolve, reject) {
   // console.log(resolve)
   // console.log(reject)
-   // функція, яка сигналізує, що дія виконана успішно і аргумент цієї функції буде результуючими даними у промісі
-  resolve('test string')
 
-     // функція, яка сигналізує, що дія виконана з помилкою і аргумент цієї функції буде результуючими даними у промісі
-  reject('bad stuff')
+  console.log('executor')
+
+  // функція, яка сигналізує, що дія виконана успішно і аргумент цієї функції буде результуючими даними у промісі
+  setTimeout(() => {
+    resolve('test string')
+  }, 450)
+
+  // функція, яка сигналізує, що дія виконана з помилкою і аргумент цієї функції буде результуючими даними у промісі
+  setTimeout(() => {
+    reject('bad stuff')
+  }, 500)
+  
 }
+
+console.log('after executor')
