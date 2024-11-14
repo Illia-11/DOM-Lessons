@@ -213,3 +213,9 @@ promise.then(
     console.error(error) // error - це дані про помилку
   }
 )
+
+// catch - метод для обробки помилок в промісах
+promise.catch(function rejectedCallBack(error) {
+  console.error('promise rejected and catched')
+  console.error(error) // error - це дані про помилку
+})
