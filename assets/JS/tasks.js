@@ -277,17 +277,42 @@ console.log('===============')
 
 // or
 
-function countTimeout(i = 0) {
+// function countTimeout(i = 0) {
 
-  if(i < 10) {
-    setTimeout(() => {
-      console.log(++i)
-      countTimeout(i)
-    }, 100)
-  } else {
-    console.timeEnd('Timeout')
-  }
-}
+//   if(i < 10) {
+//     setTimeout(() => {
+//       console.log(++i)
+//       countTimeout(i)
+//     }, 100)
+//   } else {
+//     console.timeEnd('Timeout')
+//   }
+// }
 
-console.time('Timeout')
-countTimeout()
+// console.time('Timeout')
+// countTimeout()
+
+
+console.log('===============')
+
+
+// 
+/*
+  Створити через конструктор проміс
+  Проміс має у 50% випадків виконуватися успішно
+  а в інших випадках - провалюватися
+  через методи then i catch обробити обидва випадки
+*/
+
+const promise = new Promise((resolve, reject) => {
+  // if(Math.random() > 0.5) {
+  //   resolve('Well!')
+  // } else {
+  //   reject('Not Well!')
+  // }
+// or
+  Math.random() > 0.5 ? resolve('Well!') : reject('Not Well!')
+
+  promise.then(() => console.log('Success'))
+  promise.catch(() => console.log('error'))
+})
